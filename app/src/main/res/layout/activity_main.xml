@@ -12,7 +12,7 @@
         android:layout_height="489dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="72dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,4 +34,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="159dp"
+        tools:layout_editor_absoluteY="369dp" />
+
+    <EditText
+        android:id="@+id/textView"
+        android:layout_width="162dp"
+        android:layout_height="93dp"
+        android:ems="10"
+        android:text="00:30"
+        android:textSize="45dp"
+        app:flow_verticalAlign="bottom"
+        tools:layout_editor_absoluteX="124dp"
+        tools:layout_editor_absoluteY="241dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
