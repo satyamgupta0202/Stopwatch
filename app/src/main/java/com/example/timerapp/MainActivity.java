@@ -19,11 +19,13 @@ public class MainActivity extends AppCompatActivity {
         timerSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-
+                int minutes = progress/60;
+                int second = progress - (minutes * 60);
+                timerTextView.setText(Integer.toString(minutes) + ":" + Integer.toString(second));
             }
 
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
+            public void onStartTrackingTouch(SeekBar seekBar){
 
             }
 

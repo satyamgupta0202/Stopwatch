@@ -6,20 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="369dp"
-        android:layout_height="489dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="72dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/egg" />
-
     <SeekBar
         android:id="@+id/seekBar"
         android:layout_width="377dp"
@@ -29,28 +15,50 @@
         android:layout_marginTop="45dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="23dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/buttonView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="159dp"
-        tools:layout_editor_absoluteY="369dp" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="374dp"
+        android:layout_height="485dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginRight="21dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar"
+        app:srcCompat="@drawable/egg" />
 
     <EditText
         android:id="@+id/textView"
-        android:layout_width="162dp"
-        android:layout_height="93dp"
+        android:layout_width="170dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginEnd="101dp"
+        android:layout_marginRight="101dp"
+        android:layout_marginBottom="250dp"
         android:ems="10"
-        android:text="00:30"
-        android:textSize="45dp"
-        app:flow_verticalAlign="bottom"
-        tools:layout_editor_absoluteX="124dp"
-        tools:layout_editor_absoluteY="241dp" />
+        android:gravity="center"
+        android:inputType="time"
+        android:text="00 : 30"
+        android:textSize="21dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="112dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="40dp"
+        android:text="Button"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:layout_editor_absoluteX="242dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
