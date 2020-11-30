@@ -29,7 +29,7 @@
         android:layout_marginEnd="21dp"
         android:layout_marginRight="21dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.833"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/seekBar"
         app:srcCompat="@drawable/egg" />
@@ -47,18 +47,23 @@
         android:gravity="center"
         android:inputType="time"
         android:text="00 : 30"
-        android:textSize="21dp"
+        android:textSize="25dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button4"
-        android:layout_width="112dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="40dp"
-        android:text="Button"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:layout_editor_absoluteX="242dp" />
+        android:id="@+id/button"
+        android:layout_width="111dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="44dp"
+        android:onClick="buttonClicked"
+        android:text="GO"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

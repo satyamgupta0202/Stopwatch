@@ -21,7 +21,11 @@ public class MainActivity extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 int minutes = progress/60;
                 int second = progress - (minutes * 60);
-                timerTextView.setText(Integer.toString(minutes) + ":" + Integer.toString(second));
+                String sec;
+                sec= Integer.toString(second);
+                if(sec.equals("0"))
+                    sec="00";
+                timerTextView.setText(Integer.toString(minutes) + ":" + sec);
             }
 
             @Override
