@@ -17,15 +17,18 @@ public class MainActivity extends AppCompatActivity {
     boolean active=false;
     CountDownTimer countTimer;
     Button go;
+    public void updateButton(){
+        timerTextView.setText("0:30");
+        timerSeekBar.setEnabled(true);
+        timerSeekBar.setProgress(30);
+        countTimer.cancel();
+        go.setText("Go");
+        active=false;
+    }
     public void buttonClicked (View view) {
 
         if (active) {
-            timerTextView.setText("0:30");
-            timerSeekBar.setEnabled(true);
-            timerSeekBar.setProgress(30);
-            countTimer.cancel();
-            go.setText("Go");
-            active=false;
+            updateButton();
         }
         else {
             active = true;
@@ -41,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onFinish() {
                     MediaPlayer mplayer = MediaPlayer.create(getApplicationContext(), R.raw.video);
                     mplayer.start();
+                    updateButton();
                 }
             }.start();
         }
