@@ -15,25 +15,36 @@ public class MainActivity extends AppCompatActivity {
     EditText timerTextView;
     SeekBar timerSeekBar;
     boolean active=false;
+    CountDownTimer countTimer;
     Button go;
-    public void buttonClicked (View view){
-        active = true;
-        timerSeekBar.setEnabled(false);
-        go.setText("STOP");
-        CountDownTimer countTimer = new CountDownTimer(timerSeekBar.getProgress() * 1000,1000) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                    updateTimer((int) millisUntilFinished/1000);
-            }
+    public void buttonClicked (View view) {
 
-            @Override
-            public void onFinish() {
-                MediaPlayer mplayer = MediaPlayer.create(getApplicationContext(),R.raw.video);
-                mplayer.start();
-            }
-        }.start();
+        if (active) {
+            timerTextView.setText("0:30");
+            timerSeekBar.setEnabled(true);
+            timerSeekBar.setProgress(30);
+            countTimer.cancel();
+            go.setText("Go");
+            active=false;
+        }
+        else {
+            active = true;
+            timerSeekBar.setEnabled(false);
+            go.setText("STOP");
+            countTimer = new CountDownTimer(timerSeekBar.getProgress() * 1000, 1000) {
+                @Override
+                public void onTick(long millisUntilFinished) {
+                    updateTimer((int) millisUntilFinished / 1000);
+                }
+
+                @Override
+                public void onFinish() {
+                    MediaPlayer mplayer = MediaPlayer.create(getApplicationContext(), R.raw.video);
+                    mplayer.start();
+                }
+            }.start();
+        }
     }
-
     public void updateTimer(int secondLeft){
         int minutes = secondLeft/60;
         int second = secondLeft - (minutes * 60);
